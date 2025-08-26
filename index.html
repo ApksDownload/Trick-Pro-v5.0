@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>APK Download — App Page</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#f6f8fb;
+      --accent:#0b74ff;
+      --muted:#6b7280;
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:var(--bg); color:#0f172a; -webkit-font-smoothing:antialiased}
+    .container{max-width:920px; margin:48px auto; padding:24px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(246,248,251,0.9)); border-radius:var(--radius); box-shadow:0 6px 30px rgba(11,20,40,0.06); padding:28px; display:flex; gap:24px; align-items:center}
+    .logo-wrap{width:120px; height:120px; flex:0 0 120px; display:flex; align-items:center; justify-content:center; border-radius:18px; background:linear-gradient(180deg,#fff,#f3f6fa);}
+    .logo{width:84px; height:84px; border-radius:18px; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:22px; color:var(--accent); background:linear-gradient(135deg,#eaf4ff,#ffffff); border:1px solid rgba(11,116,255,0.07)}
+
+    .meta{flex:1}
+    .title{font-size:20px; font-weight:800; margin:0 0 6px}
+    .subtitle{font-size:13px; color:var(--muted); margin:0 0 14px}
+
+    .desc{background:transparent; padding:14px; border-radius:10px; color:#111827; line-height:1.5; font-size:14px}
+    .badges{display:flex; gap:8px; margin:14px 0}
+    .badge{padding:6px 10px; background:#fff; border-radius:999px; border:1px solid rgba(11,116,255,0.06); font-size:13px}
+
+    .cta{display:flex; gap:12px; margin-top:8px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:700; cursor:pointer; text-decoration:none}
+    .btn-download{background:var(--accent); color:#fff}
+    .btn-telegram{background:transparent; color:var(--accent); border:2px solid rgba(11,116,255,0.12)}
+
+    .small{font-size:12px; color:var(--muted); margin-top:18px}
+
+    footer{max-width:920px; margin:18px auto 60px; padding:16px; text-align:center; color:var(--muted); font-size:13px}
+
+    @media (max-width:640px){
+      .card{flex-direction:column; align-items:flex-start}
+      .logo-wrap{width:96px; height:96px}
+      .logo{width:68px; height:68px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="logo-wrap">
+        <div class="logo" id="appLogo">APK</div>
+      </div>
+
+      <div class="meta">
+        <h1 class="title" id="appName">Pro Hack v5.0</h1>
+        <p class="subtitle" id="appTag">Lightweight • Fast • For Entertainment & Tools</p>
+
+        <div class="desc" id="appDesc">
+          <strong>About this APK</strong>
+          <p>
+            Trick Pro v5.0 is a community-shared tool meant for testing, learning and entertainment purposes only. It helps users explore app behaviour on their devices and try out features in a safe environment. This project does <strong>not</strong> promote gambling, betting, or any activity that involves real-money wagering.
+          </p>
+          <p>
+            Please use responsibly. We recommend installing only from trusted sources and keeping backups. By downloading you confirm you understand this is provided "as-is" for educational and entertainment use.
+          </p>
+        </div>
+
+        <div class="badges">
+          <div class="badge">Safe • Free</div>
+          <div class="badge">• For Fun and Enjoy</div>
+          <div class="badge">v5.0 • 20 MB</div>
+        </div>
+
+        <div class="cta">
+          <a class="btn btn-download" id="downloadBtn" href="#" download>
+            <!-- download icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 11l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 21H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download APK
+          </a>
+
+          <a class="btn btn-telegram" id="telegramBtn" href="https://t.me/YourChannel" target="_blank">
+            <!-- telegram icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 4L2 12.01L8.5 14.5L10.5 20L13 14.5L22 4Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Join on Telegram
+          </a>
+        </div>
+
+        <div class="small">Tip: for fun, enjoy and entertainment purpose only.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Only for fun and entertainment purpose only and free time enjoyment. Not affiliated with any gambling or betting service.</footer>
+
+  <script>
+    // -- Simple script to set download link and allow easy edits --
+    const downloadBtn = document.getElementById('downloadBtn');
+    const telegramBtn = document.getElementById('telegramBtn');
+    const appName = document.getElementById('appName');
+    const appLogo = document.getElementById('appLogo');
+    const appDesc = document.getElementById('appDesc');
+
+    // Edit these values to your own
+    const CONFIG = {
+      apkUrl: 'Trick Pro v5.0.apk',
+      telegramUrl: 'https://telegram.dog/EarningScripter1',
+      name: 'Trick Pro v5.0',
+      logoText: 'pro.png',
+    };
+
+    // Apply config
+    downloadBtn.href = CONFIG.apkUrl;
+    telegramBtn.href = CONFIG.telegramUrl;
+    appName.textContent = CONFIG.name;
+    appLogo.textContent = CONFIG.logoText;
+
+    // Prevent accidental navigation if user hasn't set a real URL
+    if (!CONFIG.apkUrl || CONFIG.apkUrl === '#'){
+      downloadBtn.addEventListener('click', (e)=>{ e.preventDefault(); alert('Download link not configured.'); });
+    }
+  </script>
+</body>
+</html>
